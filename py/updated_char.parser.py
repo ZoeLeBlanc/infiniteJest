@@ -1,21 +1,9 @@
 #!/usr/bin/env python
 #char.parser.py
-#Ciera Martinez
-
-#This script takes in two arguments
-#1. text file (sampleText)
-#2. List of terms to seach text file (listOfTerms)
-# and then prints all terms and their postion in text file
-# outputs results into ./data directory "charList.txt"
-
-#sample command to run (for infinite jest project)
-#python py/char.parser.py data/bookText/David-Foster-Wallace-Infinite-Jest-v2.0.txt data/character/characters.mod.txt
 
 import re
 import sys
 import pandas as pd
-import io
-
 
 sampleText = io.open(sys.argv[1], mode='r', encoding='utf-8') #file that contains text
 listOfTerms = open(sys.argv[2]) #file that contains terms to search for
@@ -38,17 +26,12 @@ for term in termSplit:
 
 			else:
 				pass
-				# return null, null
 		current_pos=next_pos
-print(df_chapters)
+		
 df_char_count = df_chapters.groupby(['chapter', 'term']).size().reset_index(name='counts')
-print(df_char_count)
 df_chapters.to_csv('samantha_characters_position_chapters.csv')
 df_char_count.to_csv('samantha_characters_counts_chapters.csv')
-# print(dict_chapters)
-#Outputs print
-# sys.stdout = orig_stdout
+
 
 sampleText.close()
 listOfTerms.close()
-# data.close()
