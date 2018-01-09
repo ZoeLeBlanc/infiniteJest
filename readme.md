@@ -10,12 +10,12 @@ Built from Ciera Martinez @iamciera [Infinite Jest Repo](https://github.com/iamc
 2. `py` - python scripts
 3. csv files hold the output of the scripts
 
-# Requirements
+## Requirements
 - install python
 - install pipenv
 - `pipenv install pandas`
 
-# To run scripts:
+## To run scripts:
 first argument book text file, second argument character list
 eg.
 ```
